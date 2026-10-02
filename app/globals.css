@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #4338f5;
+  --color-brand-dark: #3329d8;
+  --color-brand-soft: #eceaff;
+  --color-navy: #0f1536;
+  --color-ink: #151b3d;
+  --color-muted: #5b6285;
+  --color-mist: #f4f6ff;
+  --color-lavender: #e9e6ff;
+  --color-line: #e3e6f7;
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat Variable", "Segoe Script", cursive;
+  --shadow-card: 0 14px 34px -16px rgba(67, 56, 245, 0.22), 0 2px 6px -2px rgba(21, 27, 61, 0.06);
+  --shadow-soft: 0 8px 24px -14px rgba(67, 56, 245, 0.3);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background:
+    radial-gradient(900px 520px at 85% -5%, rgba(160, 150, 255, 0.28), transparent 60%),
+    radial-gradient(700px 480px at -5% 30%, rgba(190, 215, 255, 0.4), transparent 60%),
+    radial-gradient(800px 500px at 100% 70%, rgba(205, 195, 255, 0.28), transparent 60%),
+    #f5f6ff;
+  background-attachment: fixed;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility panel {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(6px);
+}
+
+@utility card {
+  border-radius: 18px;
+  border: 1px solid var(--color-line);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
